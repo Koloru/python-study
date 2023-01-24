@@ -1,5 +1,5 @@
 
-name = "Neil O. Infante"
+name = "John Doe"
 age = 25
 employed = True
 netWorth = 42.99
