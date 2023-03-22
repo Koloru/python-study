@@ -6,7 +6,10 @@ full_name = 'John_Doe'
 
 # get only the first name "John" in full_name
 # Start at the 0 place up to the 4th place
+
+# John
 full_name[0:4]
+print(full_name[0:4])
 
 
 # get only last name "Doe" in full_name
