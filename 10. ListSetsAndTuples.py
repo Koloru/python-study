@@ -43,23 +43,24 @@ print(names.count("Kent"))
 # You cannot reassign items
 
 characters = {"Yoshi", "Mario", "Luigi", "Peach"}
-
+print(characters)
 # Add item to a set
 characters.add("Boo")
 
 # Remove item from a set
 characters.remove("Yoshi")
-# Remove whatever element is first
 
+# Remove whatever element is first
 # but the first element will be random
 characters.pop()
 
+print(characters)
 # remove all items
-characters.clear()
+# characters.clear()
 
 
 for character in characters:
-  print(character)
+    print(character)
 
 
 # Tuples
