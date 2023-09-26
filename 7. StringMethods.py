@@ -9,7 +9,7 @@ len(name)
 name.find("l") # finds the first occurence of l
 
 # rfind - finds the last occurrence of the parameter and returns the index
-name.find("l")
+name.rfind("l")
 
 
 # capitalize, upper, lower
@@ -17,7 +17,7 @@ name.capitalize()
 name.upper()
 name.lower()
 
-# returns true of false if all the characters are digits
+# returns true or false if all the characters are digits
 name.isdigit()
 
 # contains alphabetical characters
