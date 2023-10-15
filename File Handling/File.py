@@ -34,14 +34,11 @@ if not os.path.isdir(folderDirectory):
     os.makedirs(folderDirectory)
 
 
-x = 0
-while x <= 10:
+X = 0
+while X <= 10:
     fileName = random.randint(10_000, 70_000)*10000
     filtStr = f'{fileName}'
 # create a random textfile in the textfiles directory file name is the range of 10,000 to 70,000 * 10,000
     with open(f'{folderDirectory}/{fileName}.txt', 'w') as file:
         file.write(filtStr)
-        x += 1
-
-
-# Copying files
+        X += 1
