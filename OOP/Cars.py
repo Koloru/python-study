@@ -1,6 +1,5 @@
 from car import Car
 
-
 ferrari = Car(make="Ferrari", model="f40", color="red", year=2021)
 
 # 4
