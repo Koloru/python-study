@@ -16,6 +16,7 @@ class Car:
     def __init__(self, make, model, year, color):
         # Instance variables are variables declared inside the constructor
         # affects only the instance
+        print(self.make)
         self.make = make
         self.model = model
         self.year = year
