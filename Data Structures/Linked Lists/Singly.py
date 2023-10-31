@@ -13,8 +13,24 @@
 # - Nodes reference the next node
 
 
+# BIG O
 # Advantages
-# Goot at insertion and deletion
+# Goot at insertion and deletion at the beginning and at the end
+
+# Insertion O(1) when adding to the end of beginning
+# O(N) when inserting in the middle of the list
+
+# Removal
+# O(1) at the start
+# Pop() O(n)
+
+# Searching
+# O(n)
+
+# Accessing
+# O(n)
+
+
 from typing import Any
 
 
@@ -85,11 +101,87 @@ class SinglyLinkedList:
 
         return old_head
 
+    def unshift(self, val):
+        item = Node(val)
+        if not self.head:
+            self.head = item
+            self.tail = self.head
+        else:
+            item.next = self.head
+            self.head = item
+        self.length += 1
+        return item
+
+    def get(self, val):
+        if val < 0 or val >= self.length:
+            return None
+        counter = 0
+        current = self.head
+        while counter != val:
+            if current:
+                current = current.next
+            counter += 1
+        if current:
+            return current
+
+    def set(self, index, val):
+        item = self.get(index)
+        if item:
+            item.val = val
+            return True
+        return False
+
+    def insert(self, index, val):
+        if index < 0 or index > self.length:
+            return False
+        if index == self.length:
+            self.push(val)
+        if index == 0:
+            self.unshift(val)
+        else:
+            item = self.get(index-1)
+            new_node = Node(val)
+            if item:
+                new_node.next = self.get(index)
+                item.next = new_node
+                self.length += 1
+        return True
+
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return None
+        if index == self.length-1:
+            self.pop()
+        if index == 0:
+            self.shift()
+
+        prev = self.get(index-1)
+        if prev and prev.next:
+            prev.next = prev.next.next
+            self.length -= 1
+
     def traverse(self):
         current = self.head
         while current:
-            print(current.val)
+            print(current.val, end=' ')
             current = current.next
+
+    def reverse(self):
+        node = self.head
+        self.head = self.tail
+        self.tail = node
+        prev = None
+        next = None
+
+        counter = 0
+        while counter < self.length:
+            if node:
+                next = node.next
+                node.next = prev
+                prev = node
+                node = next
+            counter += 1
+        return
 
     def display(self):
         elements = []
@@ -105,9 +197,11 @@ data.push('hello')
 data.push('there')
 data.push('mr')
 data.push('jones')
-# data.traverse()
-
-data.shift()
 
 
-data.traverse()
+print(data.reverse())
+# print(data.get(0))
+# print(data.length)
+# print(data.remove(0))
+print(data.traverse())
+print(data.traverse())
